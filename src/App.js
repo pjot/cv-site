@@ -107,20 +107,20 @@ const Tags = ({place, tags}) => {
 };
 
 const Title = ({time, title}) => (
-    <div className="grid grid-cols-12">
+    <div className="grid grid-cols-14">
         <div className="time-title time col-span-2">{time}</div>
-        <div className="time-title col-span-10">{title}</div>
+        <div className="time-title col-span-12">{title}</div>
     </div>
 );
 
 const Right = ({children}) => (
-    <div className="grid grid-cols-12">
-        <div className="col-span-10 col-start-3">{children}</div>
+    <div className="grid grid-cols-14">
+        <div className="col-span-12 col-start-3">{children}</div>
     </div>
 );
 
 const Place = ({place}) => (
-    <div className="grid grid-cols-12 place-grid">
+    <div className="grid grid-cols-14 place-grid">
         <div className="workplace col-span-8 col-start-3">
             <span className="place">{place}</span>
         </div>
@@ -131,7 +131,7 @@ const Work = ({place, titles, tags, points}) => (
     <div className="grid work-grid">
         <Place place={place} />
         <div>
-            {titles.map(({title, time}) => (<Title key={time + title} time={time} title={title} />))}
+            {titles && titles.map(({title, time}) => (<Title key={time + title} time={time} title={title} />))}
             <Right>
                 <Tags tags={tags} place={place} />
                 <Points points={points} />
@@ -139,40 +139,51 @@ const Work = ({place, titles, tags, points}) => (
         </div>
     </div>
 )
+const HalfWork = ({place, tags, points}) => (
+    <div className="grid work-grid always-border">
+        <div className="grid grid-cols-14 place-grid">
+            <div className="workplace col-span-8 col-start-5">
+                <span className="place">{place}</span>
+            </div>
+        </div>
+        <div className="grid grid-cols-14">
+            <div className="col-span-12 col-start-5">
+                <Tags tags={tags} place={place} />
+                <Points points={points} />
+            </div>
+        </div>
+    </div>
+)
 
 const Contact = () => (
-    <div className="grid grid-cols-12">
-        <div className="col-span-9 col-start-3">
+    <div className="flex justify-between">
             <div className="side-by-side">
-                <img alt="Peter" className="photo" src="peter.png" />
-            </div>
-            <div className="side-by-side">
-                <div className="name">
-                    Peter<br />
-                    Bergström
-                </div>
                 <div className="contact">
                     <i className="bi-envelope" /> peter@pjot.se
                     <br />
-                    <i className="bi-telephone" /> +46734241486
+                    <i className="bi-github" /> github.com/pjot 
                     <br />
-                    <i className="bi-github" /> github.com/pjot
-                    <br />
-                    <i className="bi-calendar3" /> 1986-02-25
-                    <br />
-                    <br />
-                    <i className="bi-mailbox" /> Nysätravägen 40B
-                    <br />
-                    <i className="bi-mailbox white" /> 131 33 Nacka
+                    <i className="bi-calendar3" /> 1986-02-25 
                 </div>
             </div>
-        </div>
+            <div className="side-by-side">
+                <div className="name">Peter Bergström</div>
+            </div>
+            <div className="side-by-side">
+                <div className="contact right">
+                    +46734241486 <i className="bi-telephone" />
+                    <br />
+                    Nysätravägen 40B <i className="bi-mailbox" />
+                    <br />
+                    131 33 Nacka <i className="bi-mailbox white" />
+                </div>
+            </div>
     </div>
 );
 
 const Paragraph = ({children}) => (
-    <div className="grid grid-cols-12 paragraph">
-        <div className="col-start-3 col-span-9">{children}</div>
+    <div className="grid grid-cols-14 paragraph">
+        <div className="col-start-3 col-span-11">{children}</div>
     </div>
 );
         
@@ -210,14 +221,26 @@ const App = () => {
                 <div className="stuff">
                     <Contact />
 
-                    <Header title="Profile" />
-                    <Paragraph>
-                        I am a software engineer who believes in the power of simplicity and accuracy.
-                        Few things beat the feeling when well-designed parts fit together naturally, when the modelling is done correctly and the business logic code almost writes itself.
-                        Python is my primary language, though I am adaptable to others.
-                        I am a dedicated learner, frequently exploring new technologies through work and personal projects.
-                        I generally favor command-line interfaces and Linux environments over graphical interfaces.
-                    </Paragraph>
+                    <Header title="About me" />
+                    <div className="grid grid-cols-14">
+                        <div className="col-span-2 avatar">
+                            <img src="/peter.png" />
+                        </div>
+                        <div className="paragraph col-span-12 col-start-3">
+                            <p>
+                                I am a software engineer who believes in the power of simplicity and accuracy.
+                                Few things beat the feeling when well-designed parts fit together naturally, when the modelling is done correctly and the business logic code almost writes itself.
+                                Python is my primary language, though I am adaptable to others.
+                                I am a dedicated learner, frequently exploring new technologies through work and personal projects.
+                                I generally favor command-line interfaces and Linux environments over graphical interfaces.
+                            </p>
+                            <p>
+                                Apart from tinkering with technology and spending time with my kids, in my free time
+                                I enjoy playing my guitar, woodworking, climbing, skiing, diving, kayaking, traveling, mountain biking,
+                            camping - in general, being outdoors. I am also a big sports fan.
+                            </p>
+                        </div>
+                    </div>
 
                     <Header title="Work Experience" /> 
                     <div>
@@ -241,13 +264,19 @@ const App = () => {
                         />
                     </div>
 
-                    <Header title="Personal" />
-                    <Paragraph>
-                        I'm born and raised in Stockholm.
-                        Apart from tinkering with technology and spending time with my kids, in my free time
-                        I enjoy playing my guitar, woodworking, climbing, skiing, diving, kayaking, traveling, mountain biking,
-                        camping - in general, being outdoors. I am also a big sports fan.
-                    </Paragraph>
+                    <Header title="Notable personal projects" />
+                    <div>
+                        <Work
+                            place="What.CD / Gazelle"
+                            titles={[{title: "Software Engineer", time: "    2008 -     2014"}]}
+                            points={[
+                                "Developed the website for What.CD, one of the worlds biggest private torrent trackers",
+                                "Mostly designed and built a wiki-like database of artists and albums",
+                                "At its peak it had over 100k users",
+                            ]}
+                            tags={["php", "mysql", "linux", "bittorrent", "irc"]}
+                        />
+                    </div>
                 </div>
             </div>
         </div>
