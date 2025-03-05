@@ -8,9 +8,13 @@ body {
     font-size: 8px;
     color: black;
     background-color: rgb(91, 124, 101);
+    min-height: 33cm;
+    min-width: 25cm;
 }
 body.print {
     background: white;
+    min-height: none;
+    min-width: none;
 }
 
 .main {
@@ -25,6 +29,9 @@ body.print {
 }
 .main.print {
     box-shadow: none;
+    margin: 50px 0px 20px 0px;
+    padding: 0;
+    padding-top: 50px;
 }
 
 .link {
