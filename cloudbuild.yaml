@@ -5,7 +5,7 @@ steps:
 
     - name: node
       entrypoint: npm
-      args: ['build']
+      args: ['run build']
 
     - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
       entrypoint: 'bash'
