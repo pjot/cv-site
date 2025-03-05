@@ -1,0 +1,166 @@
+@font-face {
+    font-family: hack;
+    src: url("https://cdnjs.cloudflare.com/ajax/libs/hack-font/3.3.0/web/fonts/hack-regular.woff");
+}
+
+body {
+    font-family: hack;
+    font-size: 8px;
+    color: black;
+    background-color: rgb(91, 124, 101);
+}
+body.print {
+    background: white;
+}
+
+.main {
+    width: 210mm;
+    height: 297mm;
+    margin: 50px;
+    margin-top: 10px;
+    background-color: white;
+    padding: 30px 50px;
+    box-shadow: 3px 3px 0px 1px rgba(0, 0, 0, 0.2),
+                0 0 3px 1px rgba(0, 0, 0, 0.4);
+}
+.main.print {
+    box-shadow: none;
+}
+
+.link {
+    width: 210mm;
+    height: 40px;
+    padding-top: 30px;
+    padding-left: 5px;
+}
+
+.link a {
+    color: #eee;
+}
+.link a:hover {
+    text-decoration: underline;
+}
+
+.stuff {
+    position: relative;
+    z-index: 2;
+    padding-top: 10px;
+}
+
+.overlay {
+    opacity: 0.2;
+    position: absolute;
+    background-image: url("../public/textured-paper.png");
+    z-index: 1;
+    width: 210mm;
+    height: 297mm;
+    margin: -30px -50px;
+}
+
+.border {
+    border: 1px solid rgba(10, 10, 10, 0.8);
+    padding: 29px 49px;
+}
+
+.photo {
+    height: 148px;
+}
+
+.white {
+    opacity: 0;
+}
+
+.paragraph {
+    padding-bottom: 5px;
+    padding-top: 7px;
+    margin-top: 5px;
+    text-align: justify;
+}
+
+.work-grid {
+    padding-bottom: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.work-grid:first-child {
+    border-top: 0 !important;
+}
+
+.name {
+    font-size: 15px;
+    padding-left: 24px;
+    padding-bottom: 11px;
+}
+
+.side-by-side {
+    display: inline-block;
+}
+
+.contact {
+    padding-left: 10px;
+    font-size: 9px;
+}
+
+.header {
+    border-bottom: 1px solid #bbb;
+    padding-left: 7px;
+    font-size: 10px;
+}
+
+.place-grid {
+    margin-bottom: 5px;
+}
+
+.place {
+    background-color: #eee;
+    padding: 2px 5px;
+    margin-left: -5px;
+    font-size: 11px;
+}
+
+.titles {
+    margin-top: 5px;
+}
+
+.title-container {
+    text-align: right;
+    display: block ruby;
+    margin-top: -4px;
+}
+
+.time-title {
+    color: #444;
+    text-transform: uppercase;
+    font-size: 8px;
+}
+
+.time {
+    margin-left: 10px;
+}
+
+.workplace {
+    padding-top: 7px;
+}
+
+.point {
+    display: block;
+    padding-right: 20px;
+}
+
+.point.multiple {
+    margin-left: -10px;
+}
+
+.tags {
+    padding-top: 5px;
+}
+
+.tag {
+    padding: 2px 4px;
+    margin-right: 4px;
+    border-radius: 2px;
+    color: #222;
+    background-color: #d3d3d3;
+    display: inline-block;
+    margin-bottom: 5px;
+}
