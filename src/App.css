@@ -13,8 +13,8 @@ body {
 }
 body.print {
     background: white;
-    min-height: none;
-    min-width: none;
+    min-height: 0;
+    min-width: 0;
 }
 
 .main {
@@ -48,7 +48,7 @@ body.print {
     text-decoration: underline;
 }
 
-.stuff {
+.page {
     position: relative;
     z-index: 2;
 }
@@ -73,7 +73,7 @@ body.print {
     margin-top: 7px;
 }
 
-.white {
+.transparent {
     opacity: 0;
 }
 
