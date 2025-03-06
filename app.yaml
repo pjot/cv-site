@@ -1,5 +1,5 @@
 env: flex
-runtime: nodejs20
+runtime: nodejs22
 service: default
 instance_class: F2
 automatic_scaling:
