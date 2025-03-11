@@ -89,7 +89,7 @@ export const profileText: string[] = [
      I generally favor command-line interfaces and Linux environments over graphical interfaces.`,
     `Apart from tinkering with technology and spending time with my kids, in my free time
      I enjoy playing my guitar, woodworking, climbing, skiing, diving, kayaking, traveling,
-     mountain biking, camping - in general, being outdoors. I am also a big sports fan.`,
+     mountain biking, photography, camping - in general, being outdoors.`
 ];
 
 export const education: WorkItem = {
@@ -105,7 +105,7 @@ export const projects: WorkItem[] = [
         place: "What.CD / Gazelle",
         titles: [{title: "Software Engineer", time: "    2008 -     2014"}],
         points: [
-            "Developed the website for What.CD, one of the worlds biggest private torrent trackers",
+            "Developed the website for What.CD, one of the biggest private torrent trackers in the world",
             "Mostly designed and built a wiki-like database of artists and albums",
             "At its peak it had over 100k users",
         ],
