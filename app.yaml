@@ -8,3 +8,12 @@ handlers:
   - url: /.*
     secure: always
     script: auto
+
+  - url: /_ah/warmup
+    static_files: build/index.html
+    upload: build/index.html
+
+inbound_services:
+- warmup
+automatic_scaling:
+  min_instances: 1
