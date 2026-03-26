@@ -5,8 +5,8 @@ import {
     profileText,
     projects,
     workExperiences,
-    WorkItem,
 } from './data';
+import type { WorkItem } from './data';
 
 interface GridProps {
     children: React.ReactNode;
